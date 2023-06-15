@@ -7,7 +7,7 @@ export default {
       name: 'title',
       title: 'Title',
       type: 'string',
-      validation: (Rule) => Rule.required(),
+      
     },
     {
       name: 'slug',
@@ -17,14 +17,14 @@ export default {
         source: 'title',
         maxLength: 96,
       },
-      validation: (Rule) => Rule.required(),
+      
     },
     {
       name: 'author',
       title: 'Author',
-      type: 'reference',
-      to: [{type: 'author'}],
-      validation: (Rule) => Rule.required(),
+      type: 'string',
+      
+      
     },
     {
       name: 'coverImage',
@@ -33,27 +33,19 @@ export default {
       options: {
         hotspot: true,
       },
-      validation: (Rule) => Rule.required(),
+      
     },
     {
       name: 'content',
       title: 'Content',
-      type: 'array',
-      of: [{type: 'block'}, {type: 'image'}, {type: 'code'}, {type: 'quote'}],
-      validation: (Rule) => Rule.required(),
-    },
-    {
-      name: 'categories',
-      title: 'Categories',
-      type: 'array',
-      of: [{type: 'reference', to: {type: 'category'}}],
-      validation: (Rule) => Rule.required(),
+      type: 'text',
+      
     },
     {
       name: 'publishedAt',
       title: 'Published At',
       type: 'datetime',
-      validation: (Rule) => Rule.required(),
+      
     },
   ],
-}
+};

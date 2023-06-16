@@ -2,7 +2,19 @@ import Button from "@mui/material/Button";
 import ButtonGroup from "@mui/material/ButtonGroup";
 import MediaCard from "../Card/card";
 import "./main.css";
+import { client } from "../client";
+import { useState, useEffect } from "react";
+
 function Main() {
+  const [posts, setPosts] = useState([]);
+  async function GetPosts() {
+    const data = await client.fetch('*[_type == "post"]');
+    setPosts(data);
+  }
+  useEffect(() => {
+    GetPosts();
+  }, []);
+
   return (
     <div className="main">
       <ButtonGroup
@@ -17,10 +29,9 @@ function Main() {
       </ButtonGroup>
 
       <div className="posts">
-        <MediaCard />
-        <MediaCard />
-        <MediaCard />
-        <MediaCard />
+        {posts.map((post, i) => (
+          <MediaCard key={i} post={post} />
+        ))}
       </div>
     </div>
   );

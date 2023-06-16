@@ -36,10 +36,7 @@ export default {
     {
       name: 'postImage',
       title: 'Post Image',
-      type: 'image',
-      options: {
-        hotspot: true,
-      },
+      type: 'string',
       
     },
     {

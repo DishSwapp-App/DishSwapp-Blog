@@ -30,7 +30,6 @@ export default function MediaCard(posts) {
           <Link to={`post/${post.slug.current}`}>
             <Button size="small">Read</Button>
           </Link>
-          <Button size="small">Share</Button>
         </CardActions>
       </Card>
     </div>

@@ -63,8 +63,13 @@ export default {
       title: "Images",
       type: "array",
       of: [{ type: 'string' }]
+    },
 
-
-    }
+    {
+      name: "references",
+      title: "References",
+      type: "array",
+      of: [{ type: 'string' }]
+    },
   ],
 };

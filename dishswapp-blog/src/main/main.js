@@ -4,6 +4,16 @@ import MediaCard from "../Card/card";
 import "./main.css";
 import { client } from "../client";
 import { useState, useEffect } from "react";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+import LazyLoad from "react-lazyload";
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: "#fff",
+    },
+  },
+});
 
 function Main() {
   const [posts, setPosts] = useState([]);
@@ -29,48 +39,52 @@ function Main() {
 
   return (
     <div className="main">
-      <ButtonGroup
-        variant="contained"
-        aria-label="outlined button group"
-        className="btn-group"
-      >
-        <Button
-          onClick={() => handleTagClick("All")}
-          className={selectedTag === "All" ? "active" : ""}
+      <ThemeProvider theme={theme}>
+        <ButtonGroup
+          variant="contained"
+          aria-label="outlined button group"
+          className="btn-group"
         >
-          All
-        </Button>
-        <Button
-          onClick={() => handleTagClick("Recipes")}
-          className={selectedTag === "Recipes" ? "active" : ""}
-        >
-          Recipes
-        </Button>
-        <Button
-          onClick={() => handleTagClick("Updates")}
-          className={selectedTag === "Updates" ? "active" : ""}
-        >
-          Updates
-        </Button>
-        <Button
-          onClick={() => handleTagClick("Top Tools")}
-          className={selectedTag === "Top Tools" ? "active" : ""}
-        >
-          Top Tools
-        </Button>
-        <Button
-          onClick={() => handleTagClick("DishSwapp ROTM")}
-          className={selectedTag === "DishSwapp ROTM" ? "active" : ""}
-        >
-          DishSwapp ROTM
-        </Button>
-      </ButtonGroup>
+          <Button
+            onClick={() => handleTagClick("All")}
+            className={selectedTag === "All" ? "active" : ""}
+          >
+            All
+          </Button>
+          <Button
+            onClick={() => handleTagClick("Recipes")}
+            className={selectedTag === "Recipes" ? "active" : ""}
+          >
+            Recipes
+          </Button>
+          <Button
+            onClick={() => handleTagClick("Updates")}
+            className={selectedTag === "Updates" ? "active" : ""}
+          >
+            Updates
+          </Button>
+          <Button
+            onClick={() => handleTagClick("Top Tools")}
+            className={selectedTag === "Top Tools" ? "active" : ""}
+          >
+            Top Tools
+          </Button>
+          <Button
+            onClick={() => handleTagClick("DishSwapp ROTM")}
+            className={selectedTag === "DishSwapp ROTM" ? "active" : ""}
+          >
+            DishSwapp ROTM
+          </Button>
+        </ButtonGroup>
+      </ThemeProvider>
 
-      <div className="posts">
-        {filteredPosts.map((post, i) => (
-          <MediaCard key={i} post={post} />
-        ))}
-      </div>
+      <LazyLoad>
+        <div className="posts">
+          {filteredPosts.map((post, i) => (
+            <MediaCard key={i} post={post} />
+          ))}
+        </div>
+      </LazyLoad>
     </div>
   );
 }

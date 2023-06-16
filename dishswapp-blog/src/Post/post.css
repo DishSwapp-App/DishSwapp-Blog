@@ -1,10 +1,44 @@
+.post{
+
+    margin-top: 20px;
+}
 .post img{
 
-    width: 350px;
-    height: 350px;
-    border: 5px solid #555;
+    display: block;
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    border: 5px solid #F9B7A4;
     justify-self: center;
     margin-left: auto;
     margin-right: auto;
 
+}
+
+.post .header{
+    margin: auto;
+    max-width: 800px;
+    margin-bottom: 10px;
+    padding: 10px;
+ 
+}
+
+.post .img-div{
+    padding: 10px;
+
+    text-align: center;
+}
+
+.post .author{
+
+   text-transform: capitalize;
+}
+
+.post .content{
+
+    margin: auto;
+    max-width: 800px;
+    border-left: solid 1px #F9B7A4;
+    border-right: solid 1px #F9B7A4;
+    padding: 10px;
 }

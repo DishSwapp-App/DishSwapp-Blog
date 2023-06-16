@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useRoute } from "wouter";
-import { client } from "../client";
+import moment from "moment";
 import GetPosts from "./getPostSlug";
 import "./post.css";
 function Post() {
@@ -15,18 +15,33 @@ function Post() {
       .catch((error) => console.log(error));
   }, [slug]);
 
-  console.log(post);
+  console.table(post);
 
   if (!post) {
     return <div>Loading...</div>;
   }
 
+  const formattedTime = moment(post.publishedAt).format("MMMM Do YYYY, h:mm a");
+  console.log(formattedTime);
   return (
     <div className="post">
-      <img src={post.postImage} alt={post.title} />
-      <h1>{post.title}</h1>
-      <h2>{post.subtitle}</h2>
-      <p>{post.content}</p>
+      <div className="header">
+        <h1>{post.title}</h1>
+        <h2>{post.subtitle}</h2>
+
+        <p className="author">{post.author}</p>
+        <p>{formattedTime}</p>
+      </div>
+
+      <div className="img-div">
+        <img src={post.postImage} alt={post.title} />
+      </div>
+
+      <br />
+
+      <div className="content">
+        <p>{post.content}</p>
+      </div>
     </div>
   );
 }

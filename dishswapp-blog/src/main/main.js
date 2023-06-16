@@ -7,29 +7,67 @@ import { useState, useEffect } from "react";
 
 function Main() {
   const [posts, setPosts] = useState([]);
+  const [selectedTag, setSelectedTag] = useState("All");
+
   async function GetPosts() {
     const data = await client.fetch('*[_type == "post"]');
     setPosts(data);
   }
+
   useEffect(() => {
     GetPosts();
   }, []);
 
+  const handleTagClick = (tag) => {
+    setSelectedTag(tag);
+  };
+
+  const filteredPosts =
+    selectedTag === "All"
+      ? posts
+      : posts.filter((post) => post.tags.includes(selectedTag));
+
   return (
     <div className="main">
       <ButtonGroup
-        variant="outlined"
+        variant="contained"
         aria-label="outlined button group"
         className="btn-group"
       >
-        <Button>Recipes</Button>
-        <Button>Updates</Button>
-        <Button>Top Tools</Button>
-        <Button>DishSwapp ROTM</Button>
+        <Button
+          onClick={() => handleTagClick("All")}
+          className={selectedTag === "All" ? "active" : ""}
+        >
+          All
+        </Button>
+        <Button
+          onClick={() => handleTagClick("Recipes")}
+          className={selectedTag === "Recipes" ? "active" : ""}
+        >
+          Recipes
+        </Button>
+        <Button
+          onClick={() => handleTagClick("Updates")}
+          className={selectedTag === "Updates" ? "active" : ""}
+        >
+          Updates
+        </Button>
+        <Button
+          onClick={() => handleTagClick("Top Tools")}
+          className={selectedTag === "Top Tools" ? "active" : ""}
+        >
+          Top Tools
+        </Button>
+        <Button
+          onClick={() => handleTagClick("DishSwapp ROTM")}
+          className={selectedTag === "DishSwapp ROTM" ? "active" : ""}
+        >
+          DishSwapp ROTM
+        </Button>
       </ButtonGroup>
 
       <div className="posts">
-        {posts.map((post, i) => (
+        {filteredPosts.map((post, i) => (
           <MediaCard key={i} post={post} />
         ))}
       </div>

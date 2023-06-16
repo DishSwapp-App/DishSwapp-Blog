@@ -88,3 +88,14 @@
     }
   }
   
+.main .active{
+
+  background-color: black;
+  color: white;
+}
+
+
+.main .active:hover{
+
+  color: white !important;
+}

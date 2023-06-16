@@ -1,23 +1,49 @@
 .hero{
 
     height: 50vh;
-    background-color: #F9B7A4;
+
+    background-image: url("https://i.ibb.co/16ZyJbz/hero-blog.jpg");
+    object-fit: cover;
+    width: 100%;
 }
 
 .hero .tag{
 
-    display: flex;
-    justify-content: space-between;
+  
+
     color: white;
+    background-color: #F9B7A4;
+    height: 100px;
+
+    
     margin: 10px;
     margin-top: 30px;
+    max-width: 400px
 
 }
 
 .hero .tag h2{
 
-    margin-left: 150px;
+    text-align: center;
+
+
+    width: auto;
+    padding: 5px;
 }
+
+.hero .tag  h4{
+
+    text-align: center;
+
+
+   
+    width: auto;
+    padding: 5px;
+
+
+
+}
+
 
 .hero .tag2{
 

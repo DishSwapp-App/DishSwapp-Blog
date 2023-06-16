@@ -56,5 +56,15 @@ export default {
       type: 'datetime',
       
     },
+
+    {
+
+      name: "images",
+      title: "Images",
+      type: "array",
+      of: [{ type: 'string' }]
+
+
+    }
   ],
 };

@@ -1,0 +1,23 @@
+.nav{
+
+    display: flex;
+    background-color: #3D717C;
+    color: white;
+    height: 100px;
+}
+
+.nav img{
+
+    width: 100px;
+    border-radius: 50%;
+    margin-left: 20px;
+    margin-right: 20px;
+
+}
+
+.nav h1{
+
+    margin-left: 20px;
+    margin-right: 20px;
+
+}

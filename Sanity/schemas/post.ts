@@ -9,6 +9,13 @@ export default {
       type: 'string',
       
     },
+
+    {
+      name: 'subtitle',
+      title: 'Subtitle',
+      type: 'string',
+      
+    },
     {
       name: 'slug',
       title: 'Slug',
@@ -27,8 +34,8 @@ export default {
       
     },
     {
-      name: 'coverImage',
-      title: 'Cover Image',
+      name: 'postImage',
+      title: 'Post Image',
       type: 'image',
       options: {
         hotspot: true,
@@ -40,6 +47,11 @@ export default {
       title: 'Content',
       type: 'text',
       
+    },
+    {
+      name: 'tags',
+      type: 'array',
+      of: [{ type: 'string' }]
     },
     {
       name: 'publishedAt',

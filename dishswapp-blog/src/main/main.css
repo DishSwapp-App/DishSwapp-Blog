@@ -1,0 +1,22 @@
+.main{
+
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70vw;
+
+}
+
+.main .btn-group{
+
+    margin-top: 50px;
+}
+
+.main .posts {
+    margin-top: 20px;
+  display: flex;
+
+  
+  gap: 10px;
+  box-sizing: border-box;
+}

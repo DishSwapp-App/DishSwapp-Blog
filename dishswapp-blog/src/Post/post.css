@@ -1,0 +1,10 @@
+.post img{
+
+    width: 350px;
+    height: 350px;
+    border: 5px solid #555;
+    justify-self: center;
+    margin-left: auto;
+    margin-right: auto;
+
+}

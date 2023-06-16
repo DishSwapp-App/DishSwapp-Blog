@@ -5,10 +5,10 @@ import CardContent from "@mui/material/CardContent";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import "./card.css";
+import { Link } from "wouter";
 
 export default function MediaCard(posts) {
   const post = posts.post;
-  console.table(post);
   return (
     <div className="card">
       <Card sx={{ maxWidth: 345 }}>
@@ -27,7 +27,9 @@ export default function MediaCard(posts) {
           </Typography>
         </CardContent>
         <CardActions>
-          <Button size="small">Read</Button>
+          <Link to={`post/${post.slug.current}`}>
+            <Button size="small">Read</Button>
+          </Link>
           <Button size="small">Share</Button>
         </CardActions>
       </Card>

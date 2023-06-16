@@ -1,11 +1,15 @@
 import "./App.css";
-import Hero from "./Hero Component/hero";
-import Main from "./main/main";
+import { Router, Route } from "wouter";
+import Post from "./Post/post";
+import Page from "./page/pageComponent";
 function App() {
   return (
     <div className="App">
-      <Hero />
-      <Main />
+      <Router>
+        <Route path="/" component={Page}></Route>
+
+        <Route path="/post/:slug" component={Post}></Route>
+      </Router>
     </div>
   );
 }

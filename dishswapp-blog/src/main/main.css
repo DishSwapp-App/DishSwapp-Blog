@@ -10,6 +10,7 @@
 .main .btn-group{
     width: auto;
     margin-top: 50px;
+  
 }
 
 .main .posts {
@@ -28,63 +29,10 @@
     .main .posts {
      -content: flex-start;
     }
-  }
-  
-  @media (max-width: 576px) {
-    .main .posts {
-      justify-content: center;
-    }
-  }
-  
-  @media (max-width: 400px) {
-    .main .posts {
-      justify-content: flex-start;
-    }
-  }
-  
-  @media (max-width: 320px) {
-    .main .posts {
-      justify-content: center;
-    }
-  }
-  
-  @media (max-width: 280px) {
-    .main .posts {
-      justify-content: flex-start;
-    }
-  }
-  
-  @media (max-width: 240px) {
-    .main .posts {
-      justify-content: center;
-    }
-  }
-  
-  @media (max-width: 200px) {
-    .main .posts {
-      justify-content: flex-start;
-    }
-  }
-  
-  .posts > * {
-    flex-basis: calc(25% - 10px);
-  }
-  
-  @media (max-width: 1000px) {
-    .posts > * {
-      flex-basis: calc(33.33% - 10px);
-    }
-  }
-  
-  @media (max-width: 768px) {
-    .posts > * {
-      flex-basis: calc(50% - 10px);
-    }
-  }
-  
-  @media (max-width: 600px) {
-    .posts > * {
-      flex-basis: calc(100% - 10px);
+
+    .main .btn-group{
+      display: flex;
+      flex-direction: column;
     }
   }
   
@@ -93,7 +41,6 @@
   background-color: black;
   color: white;
 }
-
 
 .main .active:hover{
 

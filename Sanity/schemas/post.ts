@@ -45,13 +45,6 @@ export default {
       type: 'text',
       
     },
-
-    {
-      name: 'additional_content',
-      title: 'Additional Content',
-      type: 'text',
-      
-    },
     {
       name: 'tags',
       type: 'array',

@@ -40,9 +40,24 @@ function Post() {
       <br />
 
       <div className="content">
-        {post.content.split("\n").map((line, index) => (
+        {post.content.split("/n").map((line, index) => (
           <p key={index}>{line}</p>
         ))}
+      </div>
+
+      <hr></hr>
+
+      <div className="references">
+        References:
+        <ul>
+          {post.references.map((reference, index) => (
+            <li key={index}>
+              <a href={reference} target="_blank" rel="noreferrer">
+                {reference}
+              </a>
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
   );

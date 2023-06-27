@@ -45,8 +45,6 @@ function Post() {
         ))}
       </div>
 
-      <hr></hr>
-
       <div className="references">
         References:
         <ul>

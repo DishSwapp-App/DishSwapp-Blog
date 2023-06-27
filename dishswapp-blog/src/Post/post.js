@@ -40,7 +40,9 @@ function Post() {
       <br />
 
       <div className="content">
-        <p>{post.content}</p>
+        {post.content.split("\n").map((line, index) => (
+          <p key={index}>{line}</p>
+        ))}
       </div>
     </div>
   );

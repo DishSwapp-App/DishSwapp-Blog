@@ -47,7 +47,7 @@ function Post() {
 
       <div className="references">
         References:
-        <ul>
+        <ol>
           {post.references.map((reference, index) => (
             <li key={index}>
               <a href={reference} target="_blank" rel="noreferrer">
@@ -55,7 +55,7 @@ function Post() {
               </a>
             </li>
           ))}
-        </ul>
+        </ol>
       </div>
     </div>
   );

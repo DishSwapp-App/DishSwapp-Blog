@@ -1,3 +1,5 @@
+import React from "react";
+
 import Nav from "../Nav/nav";
 import "./hero.css";
 export default function Hero() {

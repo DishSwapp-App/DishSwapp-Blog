@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useRoute } from "wouter";
 import moment from "moment";
 import GetPosts from "./getPostSlug";

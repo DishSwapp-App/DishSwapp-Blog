@@ -1,3 +1,4 @@
+import React from "react";
 import "./App.css";
 import { Router, Route } from "wouter";
 import Post from "./Post/post";

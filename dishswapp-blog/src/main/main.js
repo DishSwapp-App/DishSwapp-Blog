@@ -6,6 +6,7 @@ import { client } from "../client";
 import { useState, useEffect } from "react";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import LazyLoad from "react-lazyload";
+import React from "react";
 
 const theme = createTheme({
   palette: {

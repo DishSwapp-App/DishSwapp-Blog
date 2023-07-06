@@ -21,14 +21,18 @@
     align-items: center;
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
     box-sizing: border-box;
   }
+
+  .main .posts > *{
+    flex: 1 350px;
+  margin: 10px;
+  box-sizing: border-box;
+  max-width: 350px;
+  }
   
-  @media (max-width: 768px) {
-    .main .posts {
-     -content: flex-start;
-    }
+  @media (max-width: 500px) {
+   
 
     .main .btn-group{
       display: flex;

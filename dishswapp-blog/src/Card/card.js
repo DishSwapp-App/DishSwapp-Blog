@@ -11,7 +11,7 @@ export default function MediaCard(posts) {
   const post = posts.post;
   return (
     <div className="card">
-      <Card sx={{ maxWidth: 345 }}>
+      <Card sx={{ maxWidth: 345 }} className="Card">
         <img
           sx={{ height: 140 }}
           src={post.postImage}
